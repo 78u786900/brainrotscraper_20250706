@@ -69,7 +69,9 @@ function App() {
     setHtml('')
 
     try {
-      const apiEndpoint = dynamicMode ? '/api/scrape-dynamic' : '/api/scrape'
+      const apiEndpoint = dynamicMode
+        ? 'https://brainrotscraper-20250706-axav5kyix-zons-projects-d23f0aa6.vercel.app/api/scrape-dynamic'
+        : 'https://brainrotscraper-20250706-axav5kyix-zons-projects-d23f0aa6.vercel.app/api/scrape'
       const response = await fetch(`${apiEndpoint}?url=${encodeURIComponent(trimmedUrl)}`)
       const data = await response.json()
 
